@@ -2,6 +2,8 @@
 
 Batch modify the NPM dependent CLI tools, simplify the module uninstall and migration operations. [中文文档](README.zh-cn.md)
 
+![Voy](https://user-images.githubusercontent.com/11404005/40111668-209fa756-5936-11e8-8b52-4333a687aa4f.png)
+
 ## Quick Start
 
 ``` bash

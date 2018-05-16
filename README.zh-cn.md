@@ -2,6 +2,8 @@
 
 批量修改 NPM 依赖的 CLI 工具, 简化模块卸载与迁移的操作. [English Doc](README.md)
 
+![Voy](https://user-images.githubusercontent.com/11404005/40111668-209fa756-5936-11e8-8b52-4333a687aa4f.png)
+
 ## 使用
 
 ``` bash
