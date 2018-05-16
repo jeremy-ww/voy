@@ -30,7 +30,7 @@ class Voy {
       .map(({ pkg, version }) => version ? `${pkg}@${version}` : pkg)
   }
 
-  warn(packages) {
+  warn (packages) {
     if (packages.length === 0) {
       color(TEXT_COLOR.error, `nothing can be removed in ${this._field} !`)
       process.exit(0)
