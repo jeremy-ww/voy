@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+const voy = require('../')
+
+module.exports = ({ argv: { _: args, D } }) => {
+  if (args.length === 1) {
+    console.log(`
+    Examples:
+
+      # remove package named 'lodash'
+      voy rm ^lodash$
+
+      # remove package related to 'eslint'
+      voy rm ^eslint
+
+      # remove all package
+      voy rm all
+
+      # remove all package except 'react'
+      voy rm ^(?:react) // not work in shell
+  `)
+  } else {
+    const field = D ? 'dev' : 'dep'
+    const filter = args[1] === 'all' ? '' : args[1]
+    voy({ filter, field }).remove()
+  }
+}

@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+const voy = require('../')
+
+module.exports = ({ argv: { _: args, D } }) => {
+  if (args.length === 1) {
+    console.log(`
+    Examples:
+
+      # migrate package named 'lodash'
+      voy mg ^lodash$
+
+      # migrate package related to 'eslint'
+      voy mg ^eslint
+
+      # migrate all package
+      voy mg all
+
+      # migrate all package except 'react'
+      voy mg ^(?:react) // not work in shell
+  `)
+  } else {
+    const field = D ? 'dev' : 'dep'
+    const filter = args[1] === 'all' ? '' : args[1]
+    voy({ filter, field }).migrate()
+  }
+}

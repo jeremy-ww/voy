@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+const yargs = require('yargs')
+  .version(require('../package.json').version)
+  .alias('version', 'v')
+  .usage('Usage: $0 <command> [options]')
+  .command('rm', 'remove batch node_modules packages', require('./voy-rm'))
+  .command('mg', 'migrate batch node_modules packages', require('./voy-mg'))
+  .example('$0 rm ^eslint', 'remove packages which name start with `eslint`')
+  .alias('help', 'h')
+  .locale('en')
+
+if (yargs.argv._.length === 0) yargs.showHelp()
