@@ -7,6 +7,7 @@ function removeVersionSymbol (dependencies) {
   Object.keys(dependencies).forEach(v => {
     dependencies[v] = dependencies[v].replace(/[^\d.]/g, '')
   })
+  return dependencies
 }
 
 function readPackageAsJSON () {
