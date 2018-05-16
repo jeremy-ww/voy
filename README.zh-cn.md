@@ -1,4 +1,4 @@
-# Voy [![Build Status](https://img.shields.io/travis/Army-U/voy.svg?style=flat-square)](https://travis-ci.org/Army-U/voy) [![npm package](https://img.shields.io/npm/v/voy.svg?style=flat-square)](https://www.npmjs.com/package/voy)
+# Voy [![Build Status](https://img.shields.io/circleci/project/github/Army-U/voy.svg?style=flat-square)](https://circleci.com/gh/Army-U/voy) [![npm package](https://img.shields.io/npm/v/voy.svg?style=flat-square)](https://www.npmjs.com/package/voy)
 
 批量修改 NPM 依赖的 CLI 工具, 简化模块卸载与迁移的操作. [English Doc](README.md)
 
