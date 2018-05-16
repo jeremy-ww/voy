@@ -15,7 +15,7 @@ type NpmCommand = 'rm' | 'i'
 
 function color (severity: TEXT_COLOR, message: string, content = '') {
   console.log(
-    chalk[TEXT_COLOR[severity]](message) +
+    chalk[severity](message) +
     (content.length ? `\n${content}` : '') +
     '\n'
   )

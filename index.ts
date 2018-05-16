@@ -42,7 +42,7 @@ class Voy {
     this.warn(packages)
     color(TEXT_COLOR.success, 'will remove packages:', packages.join('\n'))
     debug(`npm rm ${packages.join(' ')}`)
-    run('rm', packages)
+    run('rm', packages.map(pkg => pkg.replace(/(.+)@.+/, '$1')))
   }
 
   migrate () {

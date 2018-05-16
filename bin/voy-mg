@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const voy = require('../')
+const voy = require('../dist/').default
 
 module.exports = ({ argv: { _: args, D } }) => {
   if (args.length === 1) {
