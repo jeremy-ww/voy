@@ -10,6 +10,7 @@
   "scripts": {
     "lint": "tslint -c tslint.json '*.ts'",
     "dev": "tsc -w",
+    "test": "jest",
     "build": "rm -rf dist/ && tsc"
   },
   "repository": {
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@types/chalk": "2.2.0",
     "@types/node": "10.1.0",
+    "jest": "22.4.3",
     "tslint": "5.10.0",
     "tslint-config-standard": "7.0.0",
     "typescript": "2.8.3"
