@@ -3,8 +3,18 @@ process.chdir('./__test__')
 const voy = require('../dist')
 const fs = require('fs')
 
+function removeVersionSymbol (dependencies) {
+  Object.keys(dependencies).forEach(v => {
+    dependencies[v] = dependencies[v].replace(/[^\d.]/g, '')
+  })
+}
+
 function readPackageAsJSON () {
-  return JSON.parse(fs.readFileSync(__dirname + '/package.json'))
+  const { dependencies, devDependencies } = JSON.parse(fs.readFileSync(__dirname + '/package.json'))
+  return {
+    dependencies: removeVersionSymbol(dependencies),
+    devDependencies: removeVersionSymbol(devDependencies)
+  }
 }
 
 test('voy test', function () {
@@ -25,7 +35,7 @@ test('voy test', function () {
       'eslint-loader': '2.0.0'
     })
 
-  voy.default({ field: 'dev', filter: '^babel' }).remove()
+  voy.default({ field: 'dep', filter: '^babel' }).remove()
 
   expect(readPackageAsJSON().devDependencies)
     .toEqual({})
