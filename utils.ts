@@ -1,17 +1,6 @@
+import { TEXT_COLOR, NpmCommand, NpmRemovePackageOptions } from './interface'
 import { spawnSync } from 'child_process'
-import * as chalk from 'chalk'
-
-export enum TEXT_COLOR {
-  success = 'green',
-  info = 'blue',
-  note = 'white',
-  warning = 'yellow',
-  error = 'red'
-}
-
-export type NpmRemovePackageOptions = '-S' | '-D'
-
-type NpmCommand = 'rm' | 'i'
+import chalk from 'chalk'
 
 function color (severity: TEXT_COLOR, message: string, content = '') {
   console.log(
@@ -23,10 +12,13 @@ function color (severity: TEXT_COLOR, message: string, content = '') {
 
 function run (
   command: NpmCommand,
-  packages: any[],
+  packages: string[],
   options?: NpmRemovePackageOptions
 ) {
-  spawnSync('npm', [command, ...packages, options], { stdio: 'inherit', cwd: process.cwd() })
+  const args = options
+    ? [command, ...packages].concat(options)
+    : [command, ...packages]
+  spawnSync('npm', args, { stdio: 'inherit', cwd: process.cwd() })
 }
 
 export {

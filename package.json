@@ -8,7 +8,7 @@
   },
   "main": "dist/index.js",
   "scripts": {
-    "lint": "tslint -c tslint.json '*.ts'",
+    "lint": "tslint --project tsconfig.json",
     "dev": "tsc -w",
     "test": "jest",
     "build": "rm -rf dist/ && tsc"
@@ -23,15 +23,16 @@
   "author": "Army-U <wuchengkai0@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/debug": "0.0.30",
-    "@types/fs-extra": "5.0.2",
     "chalk": "2.3.0",
     "debug": "3.1.0",
     "fs-extra": "4.0.2",
+    "sewing": "0.0.53",
     "yargs": "10.0.3"
   },
   "devDependencies": {
     "@types/chalk": "2.2.0",
+    "@types/debug": "0.0.30",
+    "@types/fs-extra": "5.0.2",
     "@types/node": "10.1.0",
     "jest": "22.4.3",
     "tslint": "5.10.0",
